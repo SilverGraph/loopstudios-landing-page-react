@@ -1,0 +1,255 @@
+@import './variables';
+@mixin navList {
+    padding-right: 50px;
+            // right: 0;
+            position: relative;
+            width: 100%;
+            visibility: visible;
+            z-index: 1;
+
+            ul {
+                font-family: 'Alata';
+                list-style: none;
+                margin: 0;
+                width: 100%;
+
+                span {
+                    display: flex;
+                    flex-direction: row;
+                    position: absolute;
+                    right: 0;
+                    top: -15px;
+
+                    li {
+
+                        a {
+                            color: $white;
+                            margin: 0 15px;
+                            text-decoration: none;
+        
+                            &:hover {
+                                border-bottom: 2.5px solid $white;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
+}
+
+.header {
+    background-image: url('../images/desktop/image-hero.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 725px;
+    margin: 0;
+    padding: 25px 100px;
+    // width: 100%;
+
+    // nav {
+    //     padding: 0 40px;
+    // }
+
+    .nav-center {
+        background: transparent;
+        box-shadow: none;
+
+        #menu-icon, #close-icon, #menu-div {
+            position: absolute;
+            right: 0;
+            visibility: hidden;
+            z-index: 10;
+        }
+
+        .menu-items {
+            @include navList();
+            // padding-right: 50px;
+            // // right: 0;
+            // position: relative;
+            // width: 100%;
+            // visibility: visible;
+            // z-index: 1;
+
+            // ul {
+            //     font-family: 'Alata';
+            //     list-style: none;
+            //     margin: 0;
+            //     width: 100%;
+
+            //     span {
+            //         display: flex;
+            //         flex-direction: row;
+            //         position: absolute;
+            //         right: 0;
+            //         top: -15px;
+
+            //         li {
+
+            //             a {
+            //                 color: $white;
+            //                 margin: 0 15px;
+            //                 text-decoration: none;
+        
+            //                 &:hover {
+            //                     border-bottom: 2.5px solid $white;
+            //                     text-decoration: none;
+            //                 }
+            //             }
+            //         }
+            //     }
+            // }
+        }
+    }
+
+    h1 {
+        margin: 0;
+        padding: 0;
+    }
+
+    .test {
+        background-color: red;
+        height: 50px;
+        width: 50px;
+    }
+
+    .test[data-isOpen="true"] {
+        width: 300px;
+        height: 300px;
+    }
+
+    .banner-text {
+        border: 1px solid $white;
+        color: $white;
+        font-family: 'Josefin Sans';
+        font-size: 3rem;
+        font-weight: 100;
+        line-height: 1.25;
+        margin: 50px 20px;
+        padding: 50px 40px;
+        width: 750px;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .header {
+        background-image: url("../images/mobile/image-hero.jpg");
+        background-size: cover;
+        height: 75vh;
+        padding: 0;
+        position: relative;
+        // width: fit-content;
+
+        nav {
+            padding: 0;
+        }
+
+        .nav-center {
+            padding: 0;
+            position: relative;
+            z-index: 1;
+            width: max-content;
+
+            img {
+                position: relative;
+                left: -75px;
+                z-index: 10;
+            }
+
+            h6 {
+                position: relative;
+                top: 5px;
+                left: 10px;
+                z-index: 10;
+            }
+
+            #menu-icon, #close-icon {
+                position: absolute;
+                right: -250px;
+                visibility: visible;
+                z-index: 10;
+            }
+            #menu-div {
+                position: relative;
+                visibility: visible;
+            }
+
+            .menu-items {
+                height: 100vh;
+                left: -65px;
+                margin: 0;
+                padding: 41.5px;
+                position: absolute;
+                top: -25px;
+                width: 100%;
+                z-index: 1;
+
+                ul {
+                    background-color: $black;
+                    left: 0;
+                    flex-direction: column;
+                    height: 100vh;
+                    position: absolute;
+                    top: -25px;
+                    width: 100%;
+
+                    span {
+                        flex-direction: column;
+                        left: -10px;
+                        position: relative;
+                        top: 150px;
+
+                        li {
+                            font-family: 'Josefin Sans';
+                            font-size: 2rem;
+                            margin: 20px 0;
+                            text-decoration: none;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+        }
+
+        .banner-text {
+            left: 0;
+            margin: 80px 40px 40px;
+            padding: 25px;
+            position: absolute;
+            width: 100%;
+            z-index: 0;
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .header {
+        padding: 25px 65px;
+
+        .nav-center {
+            .menu-items {
+                ul {
+                    span {
+                        li {
+                            a {
+                                margin: 0 7.5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        
+
+        .banner-text {
+            font-size: 2.4rem;
+            font-weight: 100;
+            width: auto;
+        }
+    }
+}
